@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirstHire | Smart Jobs Portal</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --secondary: #003c8f;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f3f6f8, #e8edf3);
+            color: var(--dark);
+        }
+
+        /* ================= HEADER ================= */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 6%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+        }
+
+        header h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            padding: 160px 8% 120px;
+            text-align: center;
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* ===== HEADER BRAND (Logo + Text) ===== */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-brand img {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    background: #eaf2ff;
+    border-radius: 8px;
+    object-fit: contain;
+}
+/* ===== my dashboard ===== */
+ .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #0f172a;
+    transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+    background: #eaf2ff;
+    color: #0a66c2;
+}
+
+.nav-link.active {
+    background: linear-gradient(135deg, #0a66c2, #003c8f);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(10,102,194,0.35);
+}
+
+.nav-icon {
+    font-size: 1.1rem;
+}
+/* ===== PROFILE ICON ===== */
+.profile-container {
+    position: relative;
+}
+
+.profile-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0a66c2, #003c8f);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(10,102,194,0.35);
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.08);
+}
+
+/* Online status dot */
+.profile-avatar::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+}
+
+/* Dropdown */
+.profile-menu {
+    position: absolute;
+    right: 0;
+    top: 55px;
+    width: 220px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    display: none;
+    padding: 12px 0;
+    z-index: 2000;
+}
+
+.profile-menu.show {
+    display: block;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 10px 18px;
+    text-decoration: none;
+    color: #111;
+    font-size: 0.9rem;
+}
+
+.profile-menu a:hover {
+    background: #f1f5f9;
+}
+
+.profile-name {
+    padding: 10px 18px;
+    font-weight: 600;
+    color: #0a66c2;
+}
+
+.profile-menu hr {
+    margin: 8px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+.profile-menu .logout {
+    color: #dc2626;
+}
+
+
+/* ================= PROFESSIONAL SEARCH BAR ================= */
+.search-section {
+    background: #ffffff;
+    padding: 30px 8%;
+    margin-top: -40px;
+    position: relative;
+    z-index: 10;
+}
+
+.search-box {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 15px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.search-box input,
+.search-box select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+    outline: none;
+    background: #f9fafb;
+}
+
+.search-box input::placeholder {
+    color: #9ca3af;
+}
+
+.search-box input:focus,
+.search-box select:focus {
+    border-color: var(--primary);
+    background: #ffffff;
+}
+
+.search-box button {
+    padding: 14px 30px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(10, 102, 194, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .search-box {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+}
+
+
+        /* ================= CAREER OPTIONS ================= */
+        .category-section {
+            padding: 20px 8%;
+            text-align: center;
+            background: #f8fafc;
+        }
+
+        .category-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .category-section p {
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .category-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .category-card {
+            background: #fff;
+            padding: 50px 30px;
+            border-radius: 20px;
+            border: 10px solid #e5e7eb;
+            transition: 0.4s;
+        }
+
+        .category-card:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-10px);
+        }
+
+        /* ================= INDUSTRIES ================= */
+        .industry-section {
+            padding: 50px 8%;
+        }
+
+        .industry-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .industry-section p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .industry-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            transition: 0.4s;
+        }
+
+        .industry-card:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-12px);
+        }
+
+        .industry-card h3 {
+            font-size: 1.2rem;
+        }
+
+        .industry-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= FOOTER ================= */
+    footer {
+    background: linear-gradient(135deg, #020617, #020a1a);
+    color: #e5e7eb;
+    padding: 70px 8% 40px;
+    margin-top: 80px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+footer h4 {
+    margin-bottom: 18px;
+    font-size: 1.05rem;
+    color: #ffffff;
+}
+
+footer p,
+footer a {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    text-decoration: none;
+    line-height: 1.9;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+       
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+   <!-- HEADER -->
+<header>
+    <div class="header-brand">
+        <img src="{{ url_for('static', filename='firsthirelogo.png.jpeg') }}"
+             alt="FirstHire Logo">
+        <h2>FirstHire</h2>
+    </div>
+
+   <nav style="display:flex; align-items:center; gap:25px;">
+  <a href="{{ url_for('dashboard') }}"
+   class="nav-link {% if request.endpoint == 'dashboard' %}active{% endif %}">
+    <span class="nav-icon">📊</span>
+    My Dashboard
+</a>
+
+
+    <!-- PROFILE ICON -->
+    <div class="profile-container">
+        <div class="profile-avatar" onclick="toggleProfileMenu()"
+             title="{{ user_name }}">
+            {{ (user_name or 'U')[:2]|upper }}
+        </div>
+
+        <div class="profile-menu" id="profileMenu">
+            <p class="profile-name">{{ user_name }}</p>
+            <a href="{{ url_for('profile') }}">My Profile</a>
+            <a href="{{ url_for('applications') }}">My Applications</a>
+            <a href="{{ url_for('settings') }}">Settings</a>
+            <hr>
+            <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+        </div>
+    </div>
+</nav>
+
+</header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Find the Right Career Opportunity</h1>
+        <p>Explore jobs across industries and build your future</p>
+    </section>
+<!-- ================= SEARCH & FILTER ================= -->
+<section class="search-section">
+   <form class="search-box" onsubmit="redirectToCategory(event)">
+
+
+       <input 
+    type="text" 
+    id="keyword"
+    name="q" 
+    placeholder="Job title, skills, or keywords"
+>
+
+<select id="industry">
+    <option value="">Industry</option>
+    <option value="it">IT</option>
+    <option value="manufacturing">Manufacturing</option>
+    <option value="banking">Banking</option>
+    <option value="healthcare">Healthcare</option>
+    <option value="eee">Electrical & Electronics</option>
+    <option value="government">Government</option>
+    <option value="social">Social Media</option>
+</select>
+
+<select id="jobType">
+    <option value="">Job Type</option>
+    <option value="fulltime">Full Time</option>
+    <option value="parttime">Part Time</option>
+    <option value="internship">Internship</option>
+</select>
+
+<button type="submit">Search Jobs</button>
+
+
+    </form>
+</section>
+
+
+    <!-- CAREER OPTIONS -->
+    <section class="category-section">
+        <h2>Career Paths</h2>
+        <p>Start your professional journey</p>
+
+        <div class="category-grid">
+
+            <!-- INTERNSHIPS -->
+            <a href="{{ url_for('internships') }}" class="category-link">
+
+                <div class="category-card">
+                    <h3>Internships</h3>
+                    <p>Learn with real-world exposure</p>
+                </div>
+            </a>
+
+            <!-- JOBS (SCROLLS TO INDUSTRIES) -->
+            <a href="#industries" class="category-link">
+                <div class="category-card">
+                    <h3>Jobs</h3>
+                    <p>Full-time and part-time roles</p>
+                </div>
+            </a>
+
+            <!-- TRAININGS -->
+          <a href="{{ url_for('trainings') }}" class="category-link">
+
+
+
+                <div class="category-card">
+                    <h3>Trainings</h3>
+                    <p>Skill development programs</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section class="industry-section" id="industries">
+        <h2>Top Trending Industries</h2>
+        <p>Select an industry to explore opportunities</p>
+
+        <div class="industry-grid">
+
+            <a href="{{ url_for('it') }}" class="industry-link">
+
+                <div class="industry-card">
+                    <h3>IT</h3>
+                </div>
+            </a>
+
+            <a href="{{ url_for('manufacturing') }}" class="industry-link">
+                <div class="industry-card">
+                    <h3>Manufacturing & Civil</h3>
+                </div>
+            </a>
+
+            <a href="{{ url_for('banking') }}" class="industry-link">
+                <div class="industry-card">
+                    <h3>Banking</h3>
+                </div>
+            </a>
+
+            <a href="{{ url_for('healthcare') }}" class="industry-link">
+                <div class="industry-card">
+                    <h3>Healthcare</h3>
+                </div>
+            </a>
+
+            <a href="{{ url_for('eee') }}" class="industry-link">
+                <div class="industry-card">
+                    <h3>Electrical & Electronics</h3>
+                </div>
+            </a>
+
+            <a href="{{ url_for('government') }}" class="industry-link">
+                <div class="industry-card">
+                    <h3>Government</h3>
+                </div>
+            </a>
+
+           <a href="{{ url_for('social') }}" class="industry-link">
+                <div class="industry-card">
+                    <h3>Social Media</h3>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>FirstHire</h4>
+                <p>Smart job discovery platform connecting talent with opportunity.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="{{ url_for('PrivacyPolicy') }}">privacy policy</a><br>
+                <a href="{{ url_for('dashboard') }}">Dashboard</a><br>
+                <a href="{{ url_for('about') }}">About</a>
+
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Email: FirstHire@gmail.com</p>
+                <p>Phone: +91 2935201206207</p>
+            </div>
+        </div>
+        <hr style="margin:40px 0;border:none;border-top:1px solid #1e293b;">
+<p style="text-align:center;font-size:0.85rem;color:#94a3b8;">
+    © 2026 FirstHire — Smart Job Portal
+</p>
+
+    </footer>
+<script>
+function redirectToCategory(event) {
+    event.preventDefault(); // stop normal form submit
+
+    const industry = document.getElementById("industry").value;
+    const jobType = document.getElementById("jobType").value;
+    const keyword = document.getElementById("keyword").value;
+
+    if (industry) {
+        // Example: /manufacturing?type=fulltime&q=engineer
+        let url = "/" + industry;
+
+        const params = [];
+        if (jobType) params.push("type=" + jobType);
+        if (keyword) params.push("q=" + encodeURIComponent(keyword));
+
+        if (params.length > 0) {
+            url += "?" + params.join("&");
+        }
+
+        window.location.href = url;
+    } else {
+        alert("Please select an industry");
+    }
+}
+</script>
+<script>
+function toggleProfileMenu() {
+    document.getElementById("profileMenu").classList.toggle("show");
+}
+
+document.addEventListener("click", function(e) {
+    if (!e.target.closest(".profile-container")) {
+        const menu = document.getElementById("profileMenu");
+        if (menu) menu.classList.remove("show");
+    }
+});
+</script>
+
+</body>
+
+</html>

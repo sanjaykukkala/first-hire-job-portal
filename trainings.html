@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Opportunities | FirstHire</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --secondary: #003c8f;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            color: var(--dark);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            background: rgba(255, 255, 255, 0.97);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+        }
+
+        header h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav a {
+            margin-left: 28px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+/* ===== HEADER BRAND (Logo + Text) ===== */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-brand img {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    background: #eaf2ff;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+        .hero {
+            padding: 120px 8% 80px;
+            background: linear-gradient(rgba(10, 102, 194, 0.85), rgba(0, 60, 143, 0.85)),
+                url("https://images.unsplash.com/photo-1581092160607-ee22621dd758");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .section-container {
+            padding: 70px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+        }
+
+        section .subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 60px;
+        }
+
+        .job-card {
+            background: #fff;
+            padding: 28px;
+            margin-bottom: 25px;
+            border-radius: 22px;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.35s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+
+        .job-info h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .job-info p {
+            margin: 6px 0;
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        .apply-btn {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .apply-btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            background: #020617;
+            color: #cbd5e1;
+            padding: 50px 8%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .job-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        .back-btn {
+    position: absolute;
+    left: 20px;           /* 👈 move more to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+   <header>
+    <div class="header-left">
+        <a href="javascript:history.back()" class="back-btn" title="Go Back">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <!-- Brand with logo -->
+        <div class="header-brand">
+            <img src="{{ url_for('static', filename='firsthirelogo.png.jpeg') }}"
+                 alt="FirstHire Logo">
+            <h2>FirstHire</h2>
+        </div>
+    </div>
+
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('PrivacyPolicy') }}">Privacy Policy</a>
+    </nav>
+</header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Training & Upskilling Programs</h1>
+        <p>Explore professional training roles to advance your career</p>
+    </section>
+
+    <!-- TRAINING SECTION -->
+    <section class="section-container" id="training">
+        <h2>Available Training Positions</h2>
+        <p class="subtitle">Apply to top corporate training roles</p>
+
+        <div class="job-card">
+    <div class="job-info">
+        <h3>Training Executive L3</h3>
+        <p>Corporate Training</p>
+    </div>
+    <a class="apply-btn"
+       href="https://wipro-limited.contactrh.com/jobs/12/43843476/en_US"
+       target="_blank"
+       onclick="applyJob(event, 801, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Training Coordinator</h3>
+        <p>Coordination & Training</p>
+    </div>
+    <a class="apply-btn"
+       href="https://fnz.wd3.myworkdayjobs.com/fnz_careers/job/Training-Coordinator_REQ-15945"
+       target="_blank"
+       onclick="applyJob(event, 802, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>GBS Training Specialist</h3>
+        <p>Global Training Specialist</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.jobs-ups.com/global/en/job/UPBUPSGLOBALR25044503EXTERNALENGLOBAL"
+       target="_blank"
+       onclick="applyJob(event, 803, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Functional Trainer</h3>
+        <p>Functional Training Programs</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.novartis.com/careers/career-search/job/details/req-10068251-functional-trainer"
+       target="_blank"
+       onclick="applyJob(event, 804, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Customer Care Trainer</h3>
+        <p>Customer Service Training</p>
+    </div>
+    <a class="apply-btn"
+       href="https://jobs.smartrecruiters.com/TheNielsenCompany/3743990010761735"
+       target="_blank"
+       onclick="applyJob(event, 805, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Technical Trainer</h3>
+        <p>Technical Training</p>
+    </div>
+    <a class="apply-btn"
+       href="https://wd3.myworkdaysite.com/en-US/recruiting/yokogawa/yokogawa-career-site/job/TECHNICAL-TRAINER_R-6717"
+       target="_blank"
+       onclick="applyJob(event, 806, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Process Trainer</h3>
+        <p>Process & Operations Training</p>
+    </div>
+    <a class="apply-btn"
+       href="https://cnx.wd1.myworkdayjobs.com/external_global/job/Process-Trainer_R1686420"
+       target="_blank"
+       onclick="applyJob(event, 807, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Product Trainer</h3>
+        <p>Product Knowledge Training</p>
+    </div>
+    <a class="apply-btn"
+       href="https://jobs.dayforcehcm.com/en-CA/intouchcx/CANDIDATEPORTAL/jobs/12729"
+       target="_blank"
+       onclick="applyJob(event, 808, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Exp CX Training Professional</h3>
+        <p>Customer Experience Training</p>
+    </div>
+    <a class="apply-btn"
+       href="https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/job/130334"
+       target="_blank"
+       onclick="applyJob(event, 809, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Communication Trainer</h3>
+        <p>Communication & Soft Skills Training</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.timesjobs.com/candidate/JobDetailView.html?adId=70785824"
+       target="_blank"
+       onclick="applyJob(event, 810, this.href)">
+        Apply
+    </a>
+</div>
+
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 FirstHire — Training & Upskilling Portal</p>
+    </footer>
+<script>
+function applyJob(event, jobId, jobUrl) {
+    event.preventDefault(); // 🚫 stop default navigation
+
+    fetch('/api/apply-job', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ job_id: jobId })
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.success) {
+            console.log("Application saved");
+        } else {
+            console.warn(data.message || "Already applied");
+        }
+
+        // ✅ Always redirect to company site
+        window.open(jobUrl, "_blank");
+    })
+    .catch(err => {
+        console.error(err);
+        window.open(jobUrl, "_blank");
+    });
+}
+</script>
+</body>
+
+</html>

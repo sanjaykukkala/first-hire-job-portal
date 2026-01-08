@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing & Construction Jobs | FirstHire</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --secondary: #003c8f;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: var(--dark);
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            background: rgba(255, 255, 255, 0.97);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+        }
+
+        header h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav a {
+            margin-left: 28px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+/* ===== HEADER BRAND (Logo + Text) ===== */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-brand img {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    background: #eaf2ff;
+    border-radius: 8px;
+    object-fit: contain;
+}
+        /* HERO */
+        .hero {
+            padding: 170px 8% 120px;
+            background:
+                linear-gradient(rgba(10, 102, 194, 0.85), rgba(0, 60, 143, 0.85)),
+                url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 70px 8%;
+            background: #fff;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #ffffff, #f1f5f9);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-box i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .stat-box h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .stat-box p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* JOB SECTION */
+        .jobs-section {
+            padding: 90px 8%;
+        }
+
+        .jobs-section h2 {
+            text-align: center;
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+        }
+
+        .jobs-section .subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 60px;
+        }
+
+        .job-card {
+            background: #fff;
+            padding: 32px;
+            margin-bottom: 30px;
+            border-radius: 22px;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.35s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+
+        .job-info h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .job-info p {
+            margin: 6px 0;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .apply-btn {
+            padding: 14px 34px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020617;
+            color: #cbd5e1;
+            padding: 70px 8%;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .job-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+        }
+        .back-btn {
+    position: absolute;
+    left: 20px;           /* 👈 move more to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+      <header>
+    <div class="header-left">
+        <a href="javascript:history.back()" class="back-btn" title="Go Back">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <!-- Brand with logo -->
+        <div class="header-brand">
+            <img src="{{ url_for('static', filename='firsthirelogo.png.jpeg') }}"
+                 alt="FirstHire Logo">
+            <h2>FirstHire</h2>
+        </div>
+  </div>
+    <nav>
+       
+       <a href="{{ url_for('dashboard') }}">Dashboard</a>
+       <a href="{{ url_for('about') }}">About</a>
+       <a href="{{ url_for('PrivacyPolicy') }}">Privacy POlicy</a>
+    </nav>
+</header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Manufacturing & Construction Careers</h1>
+        <p>Core engineering roles in civil, mechanical, plant, oil & gas industries</p>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="stat-box">
+            <i class="fas fa-hard-hat"></i>
+            <h3>520+</h3>
+            <p>Construction Jobs</p>
+        </div>
+        <div class="stat-box">
+            <i class="fas fa-industry"></i>
+            <h3>310+</h3>
+            <p>Manufacturing Roles</p>
+        </div>
+        <div class="stat-box">
+            <i class="fas fa-oil-can"></i>
+            <h3>140+</h3>
+            <p>Oil & Gas Projects</p>
+        </div>
+    </section>
+
+    <!-- JOB LIST -->
+    <section class="jobs-section">
+        <h2>Available Opportunities</h2>
+        <p class="subtitle">Verified roles from construction, EPC & industrial companies</p>
+
+        <div class="job-card">
+    <div class="job-info">
+        <h3>Junior Engineer – Civil</h3>
+        <p>Civil Construction & Infrastructure</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.shine.com/jobs/junior-engineer-civil/sharma-enterprises/18097054/"
+       target="_blank"
+       onclick="applyJob(event, 101, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Structural Engineer</h3>
+        <p>Structural Design & Analysis</p>
+    </div>
+    <a class="apply-btn"
+       href="https://rr.jobsyn.org/520114189DAF47ABA0CAC928ED4BF3221606"
+       target="_blank"
+       onclick="applyJob(event, 102, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Bridge CAD Designer</h3>
+        <p>Infrastructure & Bridge Design</p>
+    </div>
+    <a class="apply-btn"
+       href="https://rr.jobsyn.org/5F17AD448E12430AAF738B7D920DB7EE1606"
+       target="_blank"
+       onclick="applyJob(event, 103, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Piping Engineer – Offshore Rigs & Drill Ships</h3>
+        <p>Oil & Gas | Offshore Engineering</p>
+    </div>
+    <a class="apply-btn"
+       href="https://careers.cyient.com/#!/job-view/piping-engineer-offshore-rigs-drill-ships-vizag-india-2025040713002286"
+       target="_blank"
+       onclick="applyJob(event, 104, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Insulation Engineer</h3>
+        <p>Thermal & Industrial Insulation</p>
+    </div>
+    <a class="apply-btn"
+       href="https://larsentoubrocareers.peoplestrong.com/portal/job/detail/LNT_IE_1497173"
+       target="_blank"
+       onclick="applyJob(event, 105, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Construction Project Manager</h3>
+        <p>Project Planning & Execution</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.shine.com/jobs/construction-project-manager/krishna-enterprises/17851269/"
+       target="_blank"
+       onclick="applyJob(event, 106, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>CAD Engineer</h3>
+        <p>Engineering Design & Drafting</p>
+    </div>
+    <a class="apply-btn"
+       href="https://rr.jobsyn.org/257C28BDD6504B22921CC49EE5A321C91606"
+       target="_blank"
+       onclick="applyJob(event, 107, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Cost Manager – MEP</h3>
+        <p>MEP Costing & Quantity Survey</p>
+    </div>
+    <a class="apply-btn"
+       href="https://jobs.gleeds.com/vacancies/23469/cost-manager--mep.html"
+       target="_blank"
+       onclick="applyJob(event, 108, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Superintendent – Maintenance & Production</h3>
+        <p>Plant Operations & Maintenance</p>
+    </div>
+    <a class="apply-btn"
+       href="https://petrofac.referrals.selectminds.com/jobs/superintendent-maintenance-production-11467"
+       target="_blank"
+       onclick="applyJob(event, 109, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Construction Head – Supercritical Thermal Power Plant</h3>
+        <p>Power Plant Construction Leadership</p>
+    </div>
+    <a class="apply-btn"
+       href="https://michaelpage.co.in/job-apply/construction-head-supercritical-thermal-power-plant/ref/jn-122025-6906304"
+       target="_blank"
+       onclick="applyJob(event, 110, this.href)">
+        Apply
+    </a>
+</div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 FirstHire — Manufacturing & Construction Hiring Platform</p>
+    </footer>
+<script>
+function applyJob(event, jobId, jobUrl) {
+    event.preventDefault(); // 🚫 stop default navigation
+
+    fetch('/api/apply-job', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ job_id: jobId })
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.success) {
+            console.log("Application saved");
+        } else {
+            console.warn(data.message || "Already applied");
+        }
+
+        // ✅ Always redirect to company site
+        window.open(jobUrl, "_blank");
+    })
+    .catch(err => {
+        console.error(err);
+        window.open(jobUrl, "_blank");
+    });
+}
+</script>
+
+</body>
+
+</html>

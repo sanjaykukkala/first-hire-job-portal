@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Jobs | FirstHire</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --secondary: #003c8f;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: var(--dark);
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            background: rgba(255, 255, 255, 0.97);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+        }
+
+        header h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav a {
+            margin-left: 28px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+/* ===== HEADER BRAND (Logo + Text) ===== */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-brand img {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    background: #eaf2ff;
+    border-radius: 8px;
+    object-fit: contain;
+}
+        /* HERO */
+        .hero {
+            padding: 170px 8% 120px;
+            background:
+                linear-gradient(rgba(10, 102, 194, 0.85), rgba(0, 60, 143, 0.85)),
+                url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 70px 8%;
+            background: #fff;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #ffffff, #f1f5f9);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-box i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .stat-box h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .stat-box p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* JOB SECTION */
+        .jobs-section {
+            padding: 90px 8%;
+        }
+
+        .jobs-section h2 {
+            text-align: center;
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+        }
+
+        .jobs-section .subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 60px;
+        }
+
+        .job-card {
+            background: #fff;
+            padding: 32px;
+            margin-bottom: 30px;
+            border-radius: 22px;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.35s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+
+        .job-info h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .job-info p {
+            margin: 6px 0;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .apply-btn {
+            padding: 14px 34px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020617;
+            color: #cbd5e1;
+            padding: 70px 8%;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .job-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+        }
+        .back-btn {
+    position: absolute;
+    left: 20px;           /* 👈 move more to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+       <header>
+    <div class="header-left">
+        <a href="javascript:history.back()" class="back-btn" title="Go Back">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <!-- Brand with logo -->
+        <div class="header-brand">
+            <img src="{{ url_for('static', filename='firsthirelogo.png.jpeg') }}"
+                 alt="FirstHire Logo">
+            <h2>FirstHire</h2>
+        </div>
+    </div>
+
+    <nav>
+       
+       <a href="{{ url_for('dashboard') }}">Dashboard</a>
+       <a href="{{ url_for('about') }}">About</a>
+       <a href="{{ url_for('PrivacyPolicy') }}">Privacy POlicy</a>
+    </nav>
+</header>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Government & Infrastructure Careers</h1>
+        <p>Railways, public policy & large-scale infrastructure opportunities</p>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="stat-box">
+            <i class="fas fa-train"></i>
+            <h3>150+</h3>
+            <p>Railway Projects</p>
+        </div>
+        <div class="stat-box">
+            <i class="fas fa-landmark"></i>
+            <h3>60+</h3>
+            <p>Government Roles</p>
+        </div>
+        <div class="stat-box">
+            <i class="fas fa-helmet-safety"></i>
+            <h3>90+</h3>
+            <p>Infrastructure Positions</p>
+        </div>
+    </section>
+
+    <!-- JOB LIST -->
+    <section class="jobs-section">
+        <h2>Available Opportunities</h2>
+        <p class="subtitle">Verified government, railway & infrastructure jobs</p>
+
+       <div class="job-card">
+    <div class="job-info">
+        <h3>Senior Software Engineer – ATS (Railway)</h3>
+        <p>Siemens</p>
+    </div>
+    <a class="apply-btn"
+       href="https://jobs.siemens.com/externaljobs/JobDetail/474612"
+       target="_blank"
+       onclick="applyJob(event, 501, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>System Manager / Architect – Loco Kavach</h3>
+        <p>Siemens</p>
+    </div>
+    <a class="apply-btn"
+       href="https://jobs.siemens.com/externaljobs/JobDetail/489003"
+       target="_blank"
+       onclick="applyJob(event, 502, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Bridge Design Engineer – Railway Bridges</h3>
+        <p>Larsen & Toubro</p>
+    </div>
+    <a class="apply-btn"
+       href="https://larsentoubrocareers.peoplestrong.com/portal/job/detail/LNT_BDE_1429790"
+       target="_blank"
+       onclick="applyJob(event, 503, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Manager – Railway Projects</h3>
+        <p>Adani Group</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.adani.com/Opportunity/#en/sites/CX_3003/job/38673"
+       target="_blank"
+       onclick="applyJob(event, 504, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Supervisor – Railway Operation & Safety</h3>
+        <p>Surbana Jurong</p>
+    </div>
+    <a class="apply-btn"
+       href="https://surbanajurong.wd3.myworkdayjobs.com/careersatsmec/job/Bangalore/Supervisor-Railway-Operation-and-Safety_JR113397"
+       target="_blank"
+       onclick="applyJob(event, 505, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>System Manager (Projects) – Railway Infrastructure</h3>
+        <p>Siemens</p>
+    </div>
+    <a class="apply-btn"
+       href="https://jobs.siemens.com/externaljobs/JobDetail/458659"
+       target="_blank"
+       onclick="applyJob(event, 506, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Site Manager – High Speed Railway Signaling</h3>
+        <p>Siemens</p>
+    </div>
+    <a class="apply-btn"
+       href="https://jobs.siemens.com/externaljobs/JobDetail/480639"
+       target="_blank"
+       onclick="applyJob(event, 507, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Government Public Policy Research</h3>
+        <p>Axis My India</p>
+    </div>
+    <a class="apply-btn"
+       href="https://axismyindia.zohorecruit.in/jobs/Careers/92556000009513028"
+       target="_blank"
+       onclick="applyJob(event, 508, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Associate Technical Director – Rail Systems</h3>
+        <p>Arcadis</p>
+    </div>
+    <a class="apply-btn"
+       href="https://jobs.arcadis.com/careers/job/563671521728314"
+       target="_blank"
+       onclick="applyJob(event, 509, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Chief Rolling Stock Expert – International</h3>
+        <p>QuEST Global</p>
+    </div>
+    <a class="apply-btn"
+       href="https://careers.quest-global.com/global/en/job/QGRQGAGLOBALP113182EXTERNALENGLOBAL"
+       target="_blank"
+       onclick="applyJob(event, 510, this.href)">
+        Apply
+    </a>
+</div>
+
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 FirstHire — Government & Infrastructure Hiring Platform</p>
+    </footer>
+<script>
+function applyJob(event, jobId, jobUrl) {
+    event.preventDefault(); // 🚫 stop default navigation
+
+    fetch('/api/apply-job', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ job_id: jobId })
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.success) {
+            console.log("Application saved");
+        } else {
+            console.warn(data.message || "Already applied");
+        }
+
+        // ✅ Always redirect to company site
+        window.open(jobUrl, "_blank");
+    })
+    .catch(err => {
+        console.error(err);
+        window.open(jobUrl, "_blank");
+    });
+}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirstHire | Smart Job Portal</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="FirstHire connects students, freshers, and professionals with verified jobs, internships, and training opportunities.">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f3f6f8, #e8edf3);
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        /* ================= HEADER ================= */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 10%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        header h2 {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #111;
+        }
+        .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.header-brand img {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    background: #eaf2ff;
+    border-radius: 8px;
+}
+
+/* ===== NAV LINK STYLE (Home & About) ===== */
+.nav-link {
+    padding: 7px 18px;
+    border-radius: 22px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #111;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-link:hover {
+    background: rgba(10, 102, 194, 0.1);
+    color: var(--primary);
+}
+
+/* Optional: active/current page highlight */
+.nav-link.active {
+    background: rgba(10, 102, 194, 0.15);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+        nav .login-btn {
+            border: 2px solid var(--primary);
+            padding: 7px 20px;
+            border-radius: 25px;
+            color: var(--primary);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav .login-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        nav .register-btn {
+            background: var(--primary);
+            color: #fff;
+            padding: 8px 22px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav .register-btn:hover {
+            background: #004182;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 140px 10% 80px;
+            background: linear-gradient(120deg, var(--primary), #003c8f);
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 550px;
+            animation: slideLeft 1.2s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .hero-buttons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        .hero-visual {
+            width: 420px;
+            height: 420px;
+            background: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d") center/cover;
+            border-radius: 50%;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+           
+        }
+/* ===== HERO IMAGE FLOAT + ZOOM ===== */
+.hero-visual {
+    width: 420px;
+    height: 420px;
+    background: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d") center/cover;
+    border-radius: 50%;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+
+    animation: floatZoom 6s ease-in-out infinite;
+}
+
+/* Animation keyframes */
+@keyframes floatZoom {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-18px) scale(1.05);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+        /* ================= SECTIONS ================= */
+        section {
+            padding: 40px 12%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .purpose {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .purpose-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        .purpose-card:hover {
+            transform: translateY(-12px);
+        }
+
+        .purpose-card h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        /* ================= CTA ================= */
+        .cta-section {
+            background: linear-gradient(120deg, #0a66c2, #003c8f);
+            color: #fff;
+            text-align: center;
+            border-radius: 30px;
+            padding: 80px 10%;
+        }
+
+        .cta-section h2 {
+            font-size: 2.7rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 35px;
+            background: #fff;
+            color: var(--primary);
+            border-radius: 35px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+/* ================= PREMIUM CTA BUTTON ================= */
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 42px;
+    background: linear-gradient(135deg, #ffffff, #e6f0ff);
+    color: #0a66c2;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect */
+.cta-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    background: #ffffff;
+}
+
+/* Subtle glow effect */
+.cta-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.cta-btn:hover::after {
+    transform: translateX(100%);
+}
+
+        
+        /* ================= PROFESSIONAL FOOTER ================= */
+.footer {
+    background: #f9fafb;
+    padding: 70px 10% 30px;
+    border-top: 1px solid #e5e7eb;
+    color: #334155;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.5fr 1fr;
+    gap: 45px;
+    align-items: start;
+}
+
+
+/* Brand */
+.footer-brand h3 {
+    color: #0a66c2;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #475569;
+}
+
+/* Headings */
+.footer h4 {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    color: #0f172a;
+    position: relative;
+}
+
+/* underline */
+.footer h4::after {
+    content: '';
+    width: 32px;
+    height: 2px;
+    background: #0a66c2;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+
+/* Lists */
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+/* Links */
+.footer a {
+    text-decoration: none;
+    color: #475569;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: #0a66c2;
+    padding-left: 4px;
+}
+
+/* Social links */
+.footer-social a {
+    display: inline-block;
+    margin-right: 14px;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    text-align: center;
+    margin-top: 45px;
+    padding-top: 18px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+/* ===== PAGE SLIDE REFRESH ANIMATION ===== */
+#page {
+    animation: slideIn 0.8s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+    </style>
+
+
+
+</head>
+
+<body>
+<div id="page">
+<header>
+    <div class="header-brand">
+        <img src="{{ url_for('static', filename='firsthirelogo.png.jpeg') }}" alt="FirstHire Logo">
+        <h2>FirstHire</h2>
+    </div>
+
+    <nav>
+
+        <a href="#" onclick="refreshHome()" class="nav-link">Home</a>
+<a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+
+          <a href="{{ url_for('login') }}" class="login-btn">Login</a>
+        <a href="{{ url_for('register') }}" class="register-btn">Register</a>
+
+    </nav>
+</header>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Build Your Career with Confidence</h1>
+        <p>
+            FirstHire connects students, freshers, and professionals with verified jobs,
+            internships, and training opportunities — all in one platform.
+        </p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('register') }}" class="btn-primary">Get Started</a>
+            <a href="{{ url_for('learn_more') }}" class="btn-outline">Learn More</a>
+        </div>
+    </div>
+    <div class="hero-visual"></div>
+</div>
+
+<section>
+    <div class="section-title">
+        <h2>What We Do</h2>
+        <p>Simple. Smart. Career-focused.</p>
+    </div>
+
+    <div class="purpose">
+        <div class="purpose-card">
+            <h4>One Portal, All Jobs</h4>
+            <p>Access internships, freshers roles, and experienced jobs.</p>
+        </div>
+        <div class="purpose-card">
+            <h4>Skill-Based Matching</h4>
+            <p>Opportunities aligned with your career goals.</p>
+        </div>
+        <div class="purpose-card">
+            <h4>Dashboard-Driven Hiring</h4>
+            <p>Track applications and opportunities easily.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE FIRSTHIRE -->
+<section class="reveal">
+    <div class="section-title">
+        <h2>Why Choose FirstHire?</h2>
+        <p>Trusted by students and professionals</p>
+    </div>
+
+    <div class="purpose">
+        <div class="purpose-card">
+            <h4>Verified Opportunities</h4>
+            <p>Only trusted companies and curated job listings.</p>
+        </div>
+
+        <div class="purpose-card">
+            <h4>Student Friendly</h4>
+            <p>Designed specially for freshers and final-year students.</p>
+        </div>
+
+        <div class="purpose-card">
+            <h4>Simple & Secure</h4>
+            <p>Easy login, safe data handling, and clean dashboards.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="cta-section">
+    <h2>Ready to Build Your Career?</h2>
+    <p>Join FirstHire today and take the next step.</p>
+   <a href="{{ url_for('register') }}" class="cta-btn">
+    Get Started for Free
+</a>
+
+</section>
+
+<footer class="footer">
+    <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+            <h3>FirstHire</h3>
+            <p>
+                Your trusted platform for connecting students, freshers, and
+                professionals with verified career opportunities.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('learn_more') }}">Learn more</a></li>
+                <li><a href="{{ url_for('PrivacyPolicy') }}">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h4>Contact Us</h4>
+            <p>📧 FirstHire@gmail.com</p>
+            <p>📞 +91 2935201206207</p>
+            <p>📍 Odalarevu, India</p>
+        </div>
+
+        <!-- Social -->
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                <a href="#">LinkedIn</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 <strong>FirstHire</strong>. All Rights Reserved.
+    </div>
+</footer>
+
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Scroll Revea Animation
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.reveal').forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+    <script>
+function refreshHome() {
+    const page = document.getElementById("page");
+    page.style.animation = "none";
+    page.offsetHeight; // reset animation
+    page.style.animation = "slideIn 0.8s ease forwards";
+}
+</script>
+
+</div>
+
+</body>
+
+</html>

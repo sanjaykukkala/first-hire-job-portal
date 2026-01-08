@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More | FirstHire</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Learn more about FirstHire – a smart job portal connecting students, freshers, and professionals with verified opportunities.">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --secondary: #003c8f;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f3f6f8, #e8edf3);
+            color: #111;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 16px 8%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+        header h2 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+/* ===== BACK BUTTON ===== */
+.back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #deebf8;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.4rem;   /* 👈 arrow size */
+    font-weight: 700;
+    transition: 0.3s ease;
+
+    margin-left: -60px; /* optional: move slightly left */
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+        /* ===== HEADER BRAND (Logo + Text) ===== */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-brand img {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    background: #eaf2ff;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+
+        /* ================= HERO ================= */
+        .hero {
+            padding: 140px 10% 90px;
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: auto;
+            opacity: 0.95;
+        }
+
+        /* ================= SECTION ================= */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.4rem;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* ================= CARDS ================= */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 22px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* ================= HOW IT WORKS ================= */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .step {
+            background: #fff;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .step span {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .step h4 {
+            margin-top: 12px;
+            margin-bottom: 10px;
+        }
+
+        /* ================= CTA ================= */
+        .cta {
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            color: #fff;
+            text-align: center;
+            padding: 90px 10%;
+            border-radius: 35px;
+        }
+
+        .cta h2 {
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+        }
+
+        .cta a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 45px;
+            background: #fff;
+            color: var(--primary);
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+        }
+
+       /* ================= PROFESSIONAL FOOTER ================= */
+.footer {
+    background: #f9fafb;
+    padding: 70px 10% 30px;
+    border-top: 1px solid #e5e7eb;
+    color: #334155;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.5fr 1fr;
+    gap: 45px;
+    align-items: start;
+}
+
+/* Brand */
+.footer-brand h3 {
+    color: #0a66c2;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #475569;
+}
+
+/* Headings */
+.footer h4 {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    color: #0f172a;
+    position: relative;
+}
+
+/* underline */
+.footer h4::after {
+    content: '';
+    width: 32px;
+    height: 2px;
+    background: #0a66c2;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+
+/* Lists */
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+/* Links */
+.footer a {
+    text-decoration: none;
+    color: #475569;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: #0a66c2;
+    padding-left: 4px;
+}
+
+/* Social links */
+.footer-social a {
+    display: inline-block;
+    margin-right: 14px;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    text-align: center;
+    margin-top: 45px;
+    padding-top: 18px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+
+        /* ================= RESPONSIVE ================= */
+        @media(max-width:900px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-left">
+        <a href="javascript:history.back()" class="back-btn">
+           ←
+        </a>
+       <div class="header-brand">
+    <img src="{{ url_for('static', filename='firsthirelogo.png.jpeg') }}"
+         alt="FirstHire Logo">
+    <h2>FirstHire</h2>
+</div>
+
+    </div>
+</header>
+
+
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Learn More About FirstHire</h1>
+    <p>
+        A smart job portal designed to connect students, freshers, and professionals
+        with verified career opportunities — faster, safer, and simpler.
+    </p>
+</div>
+
+<!-- WHAT IS FIRSTHIRE -->
+<section>
+    <div class="section-title">
+        <h2>What is FirstHire?</h2>
+        <p>One platform. Multiple career paths.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Career-Focused Portal</h3>
+            <p>
+                FirstHire brings internships, fresher jobs, and experienced roles
+                together in one secure platform.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Verified Listings</h3>
+            <p>
+                Every opportunity is carefully curated to avoid fake or misleading job posts.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Student-Friendly Design</h3>
+            <p>
+                Simple navigation, clean dashboards, and easy job tracking.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- WHO IS IT FOR -->
+<section>
+    <div class="section-title">
+        <h2>Who is FirstHire For?</h2>
+        <p>Built for every stage of your career</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Students & Freshers</h3>
+            <p>Find internships, entry-level roles, and skill-based opportunities.</p>
+        </div>
+
+        <div class="card">
+            <h3>Working Professionals</h3>
+            <p>Explore growth-focused roles and career-switch opportunities.</p>
+        </div>
+
+        <div class="card">
+            <h3>Recruiters</h3>
+            <p>Connect with skilled and verified candidates efficiently.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+    <div class="section-title">
+        <h2>How FirstHire Works</h2>
+        <p>Simple steps to build your career</p>
+    </div>
+
+    <div class="steps">
+        <div class="step">
+            <span>1</span>
+            <h4>Create Account</h4>
+            <p>Sign up with basic details and secure login.</p>
+        </div>
+
+        <div class="step">
+            <span>2</span>
+            <h4>Explore Jobs</h4>
+            <p>Browse verified jobs, internships, and training programs.</p>
+        </div>
+
+        <div class="step">
+            <span>3</span>
+            <h4>Apply Easily</h4>
+            <p>Apply with one click and track application status.</p>
+        </div>
+
+        <div class="step">
+            <span>4</span>
+            <h4>Grow Your Career</h4>
+            <p>Get shortlisted and move forward confidently.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Start Your Career Journey Today</h2>
+    <p>Join thousands of users building their future with FirstHire</p>
+    <a href="{{ url_for('register') }}">Create Free Account</a>
+</section>
+
+<footer class="footer">
+    <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+            <h3>FirstHire</h3>
+            <p>
+                Your trusted platform for connecting students, freshers, and
+                professionals with verified career opportunities.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('jobs') }}">Jobs</a></li>
+                <li><a href="{{ url_for('PrivacyPolicy') }}">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h4>Contact Us</h4>
+            <p>📧 FirstHire@gmail.com</p>
+            <p>📞 +91 2935201206207</p>
+            <p>📍 Odalarevu, India</p>
+        </div>
+
+        <!-- Social -->
+        <div>
+            <h4>Follow Us</h4>
+            <div class="footer-social">
+                <a href="#">LinkedIn</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 <strong>FirstHire</strong>. All Rights Reserved.
+    </div>
+</footer>
+
+
+</body>
+</html>

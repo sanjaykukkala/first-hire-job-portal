@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | FirstHire Job Portal</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f3f6f8, #e8edf3);
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+    margin-top: 64px;   /* 👈 add this line */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    background: linear-gradient(120deg, var(--primary), #003c8f);
+    color: #fff;
+}
+
+
+        .hero-content {
+            max-width: 550px;
+            animation: slideLeft 1.2s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            width: 420px;
+            height: 420px;
+            background: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d") center/cover;
+            border-radius: 50%;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* ===== SECTION ===== */
+        section {
+            padding: 90px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.6rem;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            background: linear-gradient(120deg, #0a66c2, #003c8f);
+            color: #fff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat {
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.4s;
+        }
+
+        .stat:hover {
+            transform: translateY(-12px) scale(1.03);
+        }
+
+        .stat h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        /* ===== OFFERINGS ===== */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, var(--primary), transparent);
+            transition: 0.6s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+        }
+
+        .card h4 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* ===== CLIENTS ===== */
+        .clients {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+
+        .clients img {
+            width: 100%;
+            filter: grayscale(100%);
+            transition: 0.4s;
+        }
+
+        .clients img:hover {
+            filter: none;
+            transform: scale(1.1);
+        }
+
+  /* ===== FOOTER ===== */
+.site-footer {
+    background: #f9fafb;
+    padding: 70px 10% 30px;
+    border-top: 1px solid #e5e7eb;
+    color: #334155;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 45px;
+    margin-bottom: 30px;
+}
+
+/* Footer headings */
+.site-footer h4 {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    color: #0f172a;
+    position: relative;
+}
+
+.site-footer h4::after {
+    content: '';
+    width: 32px;
+    height: 2px;
+    background: var(--primary);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+}
+
+/* Footer text */
+.site-footer p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #475569;
+}
+
+/* Footer links */
+.site-footer a {
+    display: inline-block;
+    text-decoration: none;
+    color: #475569;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    transition: all 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: var(--primary);
+    transform: translateX(4px);
+}
+
+/* Bottom bar */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-80px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: 1s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                margin-top: 40px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+        }
+/* ===== TOP HEADER (Like Image) ===== */
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 84px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    z-index: 2000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.back-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #eaf2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* ===== HEADER BRAND WITH LOGO (About Page) ===== */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-brand img {
+    width: 45px;
+    height: 45px;
+    padding: 4px;
+    background: #eaf2ff;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* Center title in header - FirstHire theme */
+.header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--primary);          /* FirstHire blue */
+    letter-spacing: 0.4px;
+}
+.header-center::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: var(--primary);
+    margin: 4px auto 0;
+    border-radius: 2px;
+}
+
+
+        
+    </style>
+</head>
+
+<body>
+<!-- TOP HEADER (Back + Title) -->
+<header class="top-header">
+    <div class="header-left">
+        <a href="javascript:history.back()" class="back-btn" title="Go Back">←</a>
+
+        <!-- Brand with logo (added safely) -->
+        <div class="header-brand">
+            <img src="{{ url_for('static', filename='firsthirelogo.png.jpeg') }}" 
+                 alt="FirstHire Logo">
+            <span class="brand">FirstHire</span>
+        </div>
+    </div>
+
+    <div class="header-center">
+        About Us
+    </div>
+</header>
+
+
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Empowering Careers. Connecting Talent.</h1>
+            <p>FirstHire is a next-generation job portal designed to connect skilled talent with the right opportunities
+                using technology-driven solutions.</p>
+        </div>
+        <div class="hero-image"></div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="reveal">
+        <div class="section-title">
+            <h2>About FirstHire</h2>
+            <p>Where talent meets opportunity</p>
+        </div>
+
+        <div class="about">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+            <div class="about-text">
+                <h3>Who We Are</h3>
+                <p>
+                    FirstHire is a modern job portal built to empower job seekers and organizations through a seamless
+                    digital hiring ecosystem.
+                    We blend smart technology, real-time insights, and user-centric design to simplify recruitment and
+                    career growth.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats reveal">
+        <div class="stats-grid">
+            <div class="stat">
+                <h3 data-count="50000">0</h3>
+                <p>Jobs Posted</p>
+            </div>
+            <div class="stat">
+                <h3 data-count="1200">0</h3>
+                <p>Hiring Companies</p>
+            </div>
+            <div class="stat">
+                <h3 data-count="800000">0</h3>
+                <p>Registered Users</p>
+            </div>
+            <div class="stat">
+                <h3 data-count="95">0</h3>
+                <p>Placement Success %</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFERINGS -->
+    <section class="reveal">
+        <div class="section-title">
+            <h2>Our Offerings</h2>
+            <p>End-to-end hiring and career solutions</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h4>Smart Job Matching</h4>
+                <p>AI-driven job recommendations tailored to your skills and goals.</p>
+            </div>
+            <div class="card">
+                <h4>Skill-Based Hiring</h4>
+                <p>Assessments and portfolio-based hiring for fair recruitment.</p>
+            </div>
+            <div class="card">
+                <h4>Internships & Freshers</h4>
+                <p>Exclusive opportunities for students and entry-level professionals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section class="reveal">
+        <div class="section-title">
+            <h2>Trusted By</h2>
+            <p>Organizations that believe in us</p>
+        </div>
+
+        <div class="clients">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Infosys_logo.svg">
+        </div>
+    </section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <!-- Brand -->
+        <div>
+            <h4>FirstHire</h4>
+            <p>Your trusted platform for career growth and smart hiring.</p>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h4>Contact</h4>
+            <p>Email: FirstHire@gmail.com</p>
+            <p>Phone: +91 2935201206207</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h4>Quick Links</h4>
+            <a href="{{ url_for('learn_more') }}">Learn More</a><br>
+            <a href="{{ url_for('PrivacyPolicy') }}">Privacy Policy</a>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        © 2026 <strong>FirstHire</strong>. All Rights Reserved.
+    </div>
+</footer>
+
+    <script>
+        /* Scroll Reveal */
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                let top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        });
+
+        /* Counter Animation */
+        document.querySelectorAll('[data-count]').forEach(counter => {
+            let target = +counter.getAttribute('data-count');
+            let count = 0;
+            let speed = target / 200;
+
+            let update = () => {
+                if (count < target) {
+                    count += speed;
+                    counter.innerText = Math.ceil(count);
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            update();
+        });
+    </script>
+
+
+</body>
+
+</html>

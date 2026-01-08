@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications | FirstHire</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --secondary: #003c8f;
+            --bg: #f4f7fb;
+            --card: #ffffff;
+            --text: #020617;
+            --muted: #64748b;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: #ffffff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+        header h2 {
+            color: var(--primary);
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        nav a.active {
+            color: var(--primary);
+        }
+/* ===== HEADER BRAND ===== */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-brand img {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    background: #eaf2ff;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+.back-btn {
+    margin-left: -40px;
+}
+
+/* ===== NAV LINK ===== */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+    background: #eaf2ff;
+    color: var(--primary);
+}
+
+        /* ===== MAIN ===== */
+        main {
+            padding: 50px 8%;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin-bottom: 35px;
+        }
+
+        /* ===== APPLICATIONS CARD ===== */
+        .table-card {
+            background: var(--card);
+            border-radius: 18px;
+            box-shadow: 0 15px 35px var(--shadow);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: #f1f5f9;
+        }
+
+        th, td {
+            padding: 16px 22px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            font-weight: 600;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        /* ===== STATUS BADGES ===== */
+        .status {
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            display: inline-block;
+        }
+
+        .Applied { background: #64748b; }
+        .Shortlisted { background: #0a66c2; }
+        .Interview { background: #f59e0b; color: #020617; }
+        .Offer { background: #10b981; }
+        .Rejected { background: #ef4444; }
+
+        /* ===== EMPTY STATE ===== */
+        .empty {
+            padding: 50px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            main {
+                padding: 30px 6%;
+            }
+
+            th {
+                display: none;
+            }
+
+            td {
+                display: block;
+                padding: 14px;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                display: block;
+                margin-bottom: 6px;
+                color: var(--muted);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+ <header>
+    <!-- LEFT GROUP -->
+    <div class="header-brand">
+        <a href="javascript:history.back()" class="back-btn" title="Go Back">🡸</a>
+
+        <img src="{{ url_for('static', filename='firsthirelogo.png.jpeg') }}"
+             alt="FirstHire Logo">
+
+        <h2>FirstHire</h2>
+    </div>
+
+    <!-- RIGHT GROUP -->
+    <nav>
+        <a href="{{ url_for('dashboard') }}" class="nav-link">
+            📊 Go to Dashboard
+        </a>
+    </nav>
+</header>
+
+
+<!-- ===== MAIN ===== -->
+<main>
+    <h1>My Applications</h1>
+    <p class="subtitle">Track the status of all jobs you have applied for</p>
+
+    <div class="table-card">
+        {% if data %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for app in data %}
+                <tr>
+                    <td data-label="Job Title">{{ app[0] }}</td>
+                    <td data-label="Status">
+                        <span class="status {{ app[1] }}">
+                            {{ app[1] }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty">
+         <p>You haven’t applied for any jobs yet.</p>
+<a href="{{ url_for('jobs') }}" class="nav-link">🔍 Browse Jobs</a>
+
+            <p>Explore opportunities and start applying today.</p>
+        </div>
+        {% endif %}
+    </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | FirstHire</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Login to FirstHire and access your personalized job dashboard.">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            background: linear-gradient(135deg, #f3f6f8, #e8edf3);
+        }
+
+        /* ===== LEFT VISUAL ===== */
+        .visual {
+            flex: 1;
+            background: linear-gradient(120deg, #0a66c2, #003c8f);
+            color: #fff;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: slideLeft 1.2s ease;
+        }
+
+        .visual h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .visual p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 480px;
+        }
+
+        .visual-img {
+            margin-top: 50px;
+            width: 100%;
+            height: 320px;
+            background: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80") center/cover;
+            border-radius: 24px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* ===== FORM SIDE ===== */
+        .form-container {
+            flex: 1;
+            background: #ffffff;
+            padding: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: slideRight 1.2s ease;
+        }
+
+        form {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        form h2 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        form p {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 22px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+        }
+
+        .form-options a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #0a66c2, #003c8f);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(10,102,194,0.35);
+}
+
+
+        .form-footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .form-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-80px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(80px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:900px) {
+            body {
+                flex-direction: column;
+            }
+
+            .visual {
+                padding: 60px 40px;
+                text-align: center;
+            }
+
+            .visual-img {
+                height: 220px;
+            }
+
+            .form-container {
+                padding: 60px 40px;
+            }
+        }
+
+       :root {
+    --primary: #4f46e5; /* fallback primary color */
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 0; /* start with just icon */
+    overflow: hidden;
+
+    width: 50px;
+    height: 50px;
+    padding: 0 12px;
+
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Arrow icon */
+.back-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hidden text initially */
+.back-text {
+    display: inline-block;
+    margin-left: 8px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+/* Hover: expand button and show text */
+.back-btn:hover {
+    width: auto;
+    padding: 0 16px;
+    background: #ffffff;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.back-btn:hover .back-icon {
+    transform: translateX(-5px);
+}
+
+.back-btn:hover .back-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Mobile optimization */
+@media (max-width: 900px) {
+    .back-btn {
+        width: 44px;
+        height: 44px;
+        padding: 0 10px;
+        font-size: 1.1rem;
+    }
+
+    .back-btn:hover .back-text {
+        font-size: 0.85rem;
+    }
+}
+/* Back text color */
+.back-text {
+    display: inline-block;
+    margin-left: 8px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    color: #0A64BC; /* <-- Set your desired text color here */
+}
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.1rem;
+    opacity: 0.6;
+}
+
+.toggle-password:hover {
+    opacity: 1;
+}
+
+.error-msg {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+    border: 1px solid #fecaca;
+}
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+<!-- BACK BUTTON -->
+<a href="javascript:history.back()" class="back-btn">
+    <span>🡸</span>
+    <span class="back-text">Back</span>
+</a>
+    <!-- LEFT VISUAL -->
+    <div class="visual">
+        <h1>Welcome Back</h1>
+        <p>
+            Log in to manage your applications, track opportunities,
+            and continue building your career with FirstHire.
+        </p>
+
+        <div class="visual-img"></div>
+    </div>
+
+   <!-- LOGIN FORM -->
+<div class="form-container">
+
+    <form method="POST" action="{{ url_for('login') }}">
+        <h2>Login</h2>
+        <p>Access your FirstHire dashboard</p>
+
+        <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+       <div class="input-group">
+    <label>Password</label>
+    <div class="password-wrapper">
+        <input type="password" id="password" name="password"
+               placeholder="Enter your password" required>
+        <span class="toggle-password" onclick="togglePassword()">👁</span>
+    </div>
+</div>
+       <div class="form-options">
+    <label class="remember">
+        <input type="checkbox" name="remember">
+        <span>Remember me</span>
+    </label>
+
+  <a href="{{ url_for('forgot_password') }}"
+   onclick="return goToForgotPassword();">
+   Forgot Password?
+</a>
+</div>
+
+
+{% if error %}
+    <div class="error-msg">
+        {{ error }}
+    </div>
+{% endif %}
+
+        <button type="submit" class="submit-btn" id="loginBtn">
+    Login
+</button>
+
+
+        <div class="form-footer">
+            Don’t have an account?
+            <a href="{{ url_for('register') }}">Register</a>
+        </div>
+    </form>
+
+</div>
+<script>
+function togglePassword() {
+    const pwd = document.getElementById("password");
+    pwd.type = pwd.type === "password" ? "text" : "password";
+}
+</script>
+<script>
+    const form = document.querySelector("form");
+    const btn = document.getElementById("loginBtn");
+
+    form.addEventListener("submit", function () {
+        // If browser validation passes, only then change text
+        btn.innerText = "Logging in...";
+        btn.disabled = true;
+    });
+</script>
+
+<script>
+function goToForgotPassword() {
+    const email = document.querySelector('input[name="email"]').value.trim();
+
+    if (!email) {
+        alert("Please enter your email first.");
+        return false;
+    }
+
+    window.location.href =
+        "{{ url_for('forgot_password') }}?email=" + encodeURIComponent(email);
+    return false;
+}
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Jobs | FirstHire</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --secondary: #003c8f;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: var(--dark);
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            background: rgba(255, 255, 255, 0.97);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+        }
+
+        header h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav a {
+            margin-left: 28px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+/* ===== HEADER BRAND (Logo + Text) ===== */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-brand img {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    background: #eaf2ff;
+    border-radius: 8px;
+    object-fit: contain;
+}
+        /* HERO */
+        .hero {
+            padding: 170px 8% 120px;
+            background:
+                linear-gradient(rgba(10, 102, 194, 0.85), rgba(0, 60, 143, 0.85)),
+                url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 70px 8%;
+            background: #fff;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #ffffff, #f1f5f9);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-box i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .stat-box h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .stat-box p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* JOB SECTION */
+        .jobs-section {
+            padding: 90px 8%;
+        }
+
+        .jobs-section h2 {
+            text-align: center;
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+        }
+
+        .jobs-section .subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 60px;
+        }
+
+        .job-card {
+            background: #fff;
+            padding: 32px;
+            margin-bottom: 30px;
+            border-radius: 22px;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.35s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+
+        .job-info h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .job-info p {
+            margin: 6px 0;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .apply-btn {
+            padding: 14px 34px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020617;
+            color: #cbd5e1;
+            padding: 70px 8%;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .job-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+        }
+        .back-btn {
+    position: absolute;
+    left: 20px;           /* 👈 move more to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+      <header>
+    <div class="header-left">
+        <a href="javascript:history.back()" class="back-btn" title="Go Back">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <!-- Brand with logo -->
+        <div class="header-brand">
+            <img src="{{ url_for('static', filename='firsthirelogo.png.jpeg') }}"
+                 alt="FirstHire Logo">
+            <h2>FirstHire</h2>
+        </div>
+    </div>
+
+    <nav>
+       
+       <a href="{{ url_for('dashboard') }}">Dashboard</a>
+       <a href="{{ url_for('about') }}">About</a>
+       <a href="{{ url_for('PrivacyPolicy') }}">Privacy POlicy</a>
+    </nav>
+</header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Healthcare Careers</h1>
+        <p>Clinical, operations & healthcare consulting opportunities</p>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="stat-box">
+            <i class="fas fa-hospital"></i>
+            <h3>280+</h3>
+            <p>Healthcare Roles</p>
+        </div>
+        <div class="stat-box">
+            <i class="fas fa-user-md"></i>
+            <h3>95+</h3>
+            <p>Clinical Positions</p>
+        </div>
+        <div class="stat-box">
+            <i class="fas fa-notes-medical"></i>
+            <h3>120+</h3>
+            <p>Operations & Admin</p>
+        </div>
+    </section>
+
+    <!-- JOB LIST -->
+    <section class="jobs-section">
+        <h2>Available Opportunities</h2>
+        <p class="subtitle">Verified healthcare jobs from Accenture, Cognizant, EY & global providers</p>
+
+        <div class="job-card">
+    <div class="job-info">
+        <h3>Health Operations Associate</h3>
+        <p>Accenture</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.accenture.com/in-en/careers/jobdetails?id=AIOC-S01613222_en"
+       target="_blank"
+       onclick="applyJob(event, 301, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Health Operations Analyst</h3>
+        <p>Accenture</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.accenture.com/in-en/careers/jobdetails?id=AIOC-S01605033_en"
+       target="_blank"
+       onclick="applyJob(event, 302, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Product Manager – Healthcare Consulting</h3>
+        <p>Cognizant</p>
+    </div>
+    <a class="apply-btn"
+       href="https://careers.cognizant.com/global-en/jobs/00066593471/"
+       target="_blank"
+       onclick="applyJob(event, 303, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Healthcare Consultant – Senior</h3>
+        <p>EY (Life Sciences)</p>
+    </div>
+    <a class="apply-btn"
+       href="https://careers.ey.com/ey/job/Gurgaon-BC-sectorlifesciene-Healthcare-Consultant-Senior-HR-122010"
+       target="_blank"
+       onclick="applyJob(event, 304, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Health Operations New Associate</h3>
+        <p>Accenture</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.accenture.com/in-en/careers/jobdetails?id=AIOC-S01572160_en"
+       target="_blank"
+       onclick="applyJob(event, 305, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Operations Manager</h3>
+        <p>R1 RCM</p>
+    </div>
+    <a class="apply-btn"
+       href="https://r1rcm.wd1.myworkdayjobs.com/R1RCM/job/Operations-Manager_R250000011351"
+       target="_blank"
+       onclick="applyJob(event, 306, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Health Admin Services Associate</h3>
+        <p>Accenture</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.accenture.com/in-en/careers/jobdetails?id=AIOC-S01616647_en"
+       target="_blank"
+       onclick="applyJob(event, 307, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Health Clinical Services Associate</h3>
+        <p>Accenture</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.accenture.com/in-en/careers/jobdetails?id=AIOC-S01612360_en"
+       target="_blank"
+       onclick="applyJob(event, 308, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Medical Officer – Emergency Care Centre</h3>
+        <p>Reliance Industries</p>
+    </div>
+    <a class="apply-btn"
+       href="https://www.expertia.ai/ril-hydrocarbons/job/hiring-medical-officer-emergency-care-centre"
+       target="_blank"
+       onclick="applyJob(event, 309, this.href)">
+        Apply
+    </a>
+</div>
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>Clinical Investigator</h3>
+        <p>UnitedHealth Group</p>
+    </div>
+    <a class="apply-btn"
+       href="https://careers.unitedhealthgroup.com/job/22166882"
+       target="_blank"
+       onclick="applyJob(event, 310, this.href)">
+        Apply
+    </a>
+</div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 FirstHire — Healthcare Professional Hiring Platform</p>
+    </footer>
+<script>
+function applyJob(event, jobId, jobUrl) {
+    event.preventDefault(); // 🚫 stop default navigation
+
+    fetch('/api/apply-job', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ job_id: jobId })
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.success) {
+            console.log("Application saved");
+        } else {
+            console.warn(data.message || "Already applied");
+        }
+
+        // ✅ Always redirect to company site
+        window.open(jobUrl, "_blank");
+    })
+    .catch(err => {
+        console.error(err);
+        window.open(jobUrl, "_blank");
+    });
+}
+</script>
+</body>
+
+</html>

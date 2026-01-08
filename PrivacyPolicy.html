@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | FirstHire</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --secondary: #003c8f;
+            --dark: #0f172a;
+            --gray: #475569;
+            --bg: #f4f7fb;
+            --card: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--dark);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 16px 8%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+        header h2 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        /* ===== HEADER BRAND (Logo + Text) ===== */
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-brand img {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    background: #eaf2ff;
+    border-radius: 8px;
+    object-fit: contain;
+}
+        /* ===== PRIVACY PAGE HERO ===== */
+.privacy-hero {
+    margin-top: 70px; /* accounts for fixed header */
+    padding: 80px 10% 70px;
+    background: linear-gradient(135deg, #0a66c2, #003c8f);
+    color: #ffffff;
+    text-align: center;
+}
+
+.privacy-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.privacy-hero p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    max-width: 750px;
+    margin: auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .privacy-hero {
+        padding: 65px 6% 55px;
+    }
+
+    .privacy-hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+
+        /* ===== WRAPPER ===== */
+        .page-wrapper {
+            padding: 40px 10% 80px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* ===== TITLE ===== */
+        .page-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-title h1 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            color: var(--gray);
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* ===== POLICY CARD ===== */
+        .policy-card {
+            background: var(--card);
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+        }
+
+        .policy-section h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .policy-section p,
+        .policy-section li {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .policy-section ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* ===== HIGHLIGHT BOX ===== */
+        .highlight {
+            background: #f1f5f9;
+            padding: 25px;
+            border-left: 5px solid var(--primary);
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width: 900px) {
+            .page-wrapper {
+                padding: 120px 6% 60px;
+            }
+
+            .policy-card {
+                padding: 35px;
+            }
+
+            .page-title h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+          .back-btn {
+    position: absolute;
+    left: 20px;           /* 👈 move more to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}
+    </style>
+</head>
+
+<body>
+
+ <header>
+    <div class="header-left">
+        <a href="javascript:history.back()" class="back-btn" title="Go Back">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <!-- Brand with logo -->
+        <div class="header-brand">
+            <img src="{{ url_for('static', filename='firsthirelogo.png.jpeg') }}"
+                 alt="FirstHire Logo">
+            <h2>FirstHire</h2>
+        </div>
+    </div>
+</header>
+<!-- ===== PRIVACY HERO SECTION ===== -->
+<section class="privacy-hero">
+    <h1>Privacy Policy</h1>
+    <p>
+        Learn how FirstHire collects, uses, and safeguards your personal information
+        while providing a secure and transparent platform.
+    </p>
+</section>
+
+<div class="page-wrapper">
+
+    <div class="policy-card">
+
+        <div class="policy-section">
+            <h3><i class="fas fa-user-shield"></i> Information We Collect</h3>
+            <ul>
+                <li>Personal details like name, email, and phone number.</li>
+                <li>Job and internship application information.</li>
+                <li>Technical data such as IP address and browser details.</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h3><i class="fas fa-cogs"></i> How We Use Your Information</h3>
+            <ul>
+                <li>To process applications and provide services.</li>
+                <li>To communicate updates and notifications.</li>
+                <li>To improve platform security and performance.</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h3><i class="fas fa-cookie-bite"></i> Cookies & Tracking</h3>
+            <p>Cookies help us understand user behavior and enhance experience. You can disable cookies in your browser settings.</p>
+        </div>
+
+        <div class="policy-section">
+            <h3><i class="fas fa-share-alt"></i> Data Sharing</h3>
+            <p>We do not sell personal data. Information may be shared with trusted partners or legal authorities if required.</p>
+        </div>
+
+        <div class="policy-section">
+            <h3><i class="fas fa-lock"></i> Data Security</h3>
+            <div class="highlight">
+                We follow industry-standard security practices to protect your information from unauthorized access.
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h3><i class="fas fa-envelope"></i> Contact Us</h3>
+            <p>Email: info@firsthire.com</p>
+            <p>Website: www.firsthire.com</p>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 <strong>FirstHire</strong>. All Rights Reserved.
+    </footer>
+
+</div>
+
+</body>
+</html>
